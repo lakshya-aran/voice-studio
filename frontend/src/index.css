@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-console: #1b2130;
+  --color-well: #161b27; /* recessed areas: editor, timeline */
+  --color-panel: #232a3b;
+  --color-raised: #2b3347;
+  --color-line: #323c52;
+  --color-line-strong: #45506a;
+  --color-ink: #ece6d8;
+  --color-ink-soft: #c5c0b4;
+  --color-muted: #8c93a6;
+  --color-signal: #f2b33d;
+  --color-signal-dim: #a67a26;
+  --color-wave: #6f8fb0;
+  --color-rec: #e5484d;
+  --color-ok: #6fbf8e;
+
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --radius-panel: 10px;
+  --radius-control: 6px;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-console text-ink font-sans antialiased;
+    font-variation-settings: "wdth" 100;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--color-signal) 35%, transparent);
+  }
+}
+
+@utility condensed {
+  font-variation-settings: "wdth" 72;
+  letter-spacing: -0.005em;
+}
+@utility wide {
+  font-variation-settings: "wdth" 112;
+}
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+}
+@utility legend {
+  /* small engraved-panel label */
+  @apply text-[12px] text-muted;
+  font-variation-settings: "wdth" 85;
+  letter-spacing: 0.01em;
+}
+
+input[type="range"] {
+  accent-color: var(--color-signal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
