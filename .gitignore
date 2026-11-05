@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+backend/.venv/
+backend/.env
+backend/data/
+backend/tests/fixtures/
+.pytest_cache/
+# Node
+node_modules/
+frontend/dist/
+frontend/.env.local
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.json
+# User data: voice recordings, databases, logs
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.ogg
+*.webm
+*.db
+*.sqlite
+*.sqlite3
+*.log
+# Local tool config
+.claude/
+.mcp.json
