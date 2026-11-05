@@ -1,0 +1,22 @@
+# Web / API
+fastapi>=0.160
+uvicorn[standard]>=0.30
+python-multipart>=0.0.21
+pydantic-settings>=2.4
+email-validator>=2.2
+sqlalchemy>=2.0.36
+pyjwt>=2.9
+cryptography>=43
+
+# Audio
+numpy>=2
+soundfile>=0.12
+imageio-ffmpeg>=0.5   # bundles a static ffmpeg binary (no system install needed)
+
+# Voice provider: Kyutai Pocket TTS (CPU, CC-BY-4.0). Pulls torch (CPU-only on Windows/macOS).
+pocket-tts>=4.0
+
+# Optional extras (install manually when needed):
+#   boto3            -> S3-compatible object storage (STORAGE_BACKEND=s3)
+#   psycopg[binary]  -> PostgreSQL (DATABASE_URL=postgresql+psycopg://...)
+#   coqui-tts[cpu]   -> optional XTTS-v2 provider (non-commercial CPML licence)
